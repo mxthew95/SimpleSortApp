@@ -105,14 +105,6 @@ const ActionSheet = () => {
         },
     });
 
-    const pressHandler = () => {
-        top.value = withSpring(
-            top.value !== initialHeight ? initialHeight : dimensions.height / 2,
-            SPRING_CONFIG
-        )
-        fadeAnim.value = withSpring(top.value > dimensions.height / 2 ? 1 : 0, SPRING_CONFIG)
-    }
-
     const handlePress = () => {
         const dataProp = {
             first: 'amount',
@@ -169,11 +161,11 @@ const ActionSheet = () => {
                     backgroundColor: '#bdbdbd',
                     height: 40,
                 }}>
-                    <TouchableOpacity
-                        onPress={pressHandler}
-                        style={{ margin: 5, alignItems: 'center', justifyContent: 'center', borderRadius: 20, height: 15, width: 60 }}>
+                    <View
+                        style={{ margin: 5, alignItems: 'center', justifyContent: 'center', borderRadius: 20, height: 15, width: 60 }}
+                    >
                         <View style={{ borderRadius: 20, height: 10, width: 50, backgroundColor: 'grey' }}></View>
-                    </TouchableOpacity>
+                    </View>
                 </View>
                 <Animated.View style={[{
                     flex: 1,
